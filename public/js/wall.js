@@ -2,13 +2,31 @@ var Wall = Wall || {};
 
 Wall = {
   container: '',
-  currentRotation: {},
+  currentRotation: [],
+  currentScene: {},
+  sectionsWatched: [],
   jug: new Juggernaut,
+  updateSectionsFromSource: function(source_data) {
+    // Find all sections tied to this source
+    $.each(Wall.currentScene['sections'], function (section) {
+
+      if (section['source'] == source_data['source']) {
+        console.log(source_data);
+        section['data'] = source_data;
+        Wall.renderSection(section);
+      }
+    });
+  },
+  renderSection: function(section) {
+    $(Wall.container + ' #section-' + section['id']).html(
+      ecoTemplates[section['type']](section['data'])
+    );
+  },
   changeRotation: function(data) {
     Wall.currentRotation = data;
     // TODO: Support multiple scenes within a rotation. This just looks at the first scene.
-    var new_rotation = data['rotation'][0];
-    var template_name = new_rotation['layout'];
+    Wall.currentScene = data['rotation'][0];
+    var template_name = Wall.currentScene['layout'];
 
     // Render the layout
     $(Wall.container).html(
@@ -16,12 +34,15 @@ Wall = {
     );
 
     // Render the sections inside of the layout
-    $.each(new_rotation['sections'],function(section) {
-      $(Wall.container + ' #section-' + section['id']).html(
-        ecoTemplates[section['type']](section['data'])
-      );
+    $.each(Wall.currentScene['sections'],function(section) {
+      Wall.renderSection(section);
 
       // Subscribe to this section's data source
+      Wall.jug.subscribe("sources/" + section['source'], function(data) {
+        data = JSON.parse(data);
+        Wall.updateSectionsFromSource(data);
+        console.log('Updated from source: ' + data['source']);
+      });
     });
   },
   new: function(container, screen_number) {

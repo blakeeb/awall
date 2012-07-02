@@ -42,6 +42,7 @@ handler do |job|
   # TODO: only publish if data has changed
   Juggernaut.publish('sources/thing_count', '
       {
+        "source": "thing_count",
         "value": "' + rand(100).to_s + '",
         "caption": "Things"
       }
@@ -49,6 +50,7 @@ handler do |job|
 
   Juggernaut.publish('sources/widget_count', '
       {
+        "source": "widget_count",
         "value": "' + rand(100).to_s + '",
         "caption": "Widgets"
       }
