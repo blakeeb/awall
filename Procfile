@@ -1,3 +1,3 @@
 web: node serve.js
-juggernaut: juggernaut
+juggernaut: juggernaut --port=8080
 clockwork: clockwork clock.rb

@@ -6,12 +6,16 @@
   <body>
     <div class="container"></div>
     <script src="js/ender.min.js"></script>
+    <!-- TODO: minify Juggernaut -->
+    <script src="http://localhost:8080/application.js"></script>
+    <script src="js/wall.js"></script>
     <!-- TODO: figure out how to include eco and coffee-script in Ender without the "fs" error -->
     <script src="js/layouts/graph_with_boxes.js"></script>
+    <script src="js/sections/value_with_caption.js"></script>
     <script>
-      // var wall = Wall.new();
       $(document).ready(function() {
-        $('.container').html(ecoTemplates["graph_with_boxes"].call());
+        // TODO: Figure out JS design patterns. I'd like: var wall = Wall.new('.container', 1);
+        Wall.new('.container', 1);
       });
     </script>
   </body>

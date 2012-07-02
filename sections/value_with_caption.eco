@@ -1,6 +1,6 @@
 <div class="value">
-  <%= value %>
+  <%= @value %>
 </div>
 <div class="caption">
-  <%= caption %>
+  <%= @caption %>
 </div>

@@ -1,24 +1,24 @@
 <div class="col1">
-    <div class="row1">
+    <div class="row1 section" id="section-1">
         INSANE Graph
     </div>
     <div class="row2">
-        <div class="subcolumn1">
+        <div class="subcolumn1 section" id="section-2">
             3 Doohickeys
         </div>
-        <div class="subcolumn2">
+        <div class="subcolumn2 section" id="section-3">
             2 Gizmos
         </div>
     </div>
 </div>
 <div class="col2">
-    <div class="row1">
+    <div class="row1 section" id="section-4">
         59% cats lie
     </div>
-    <div class="row1">
+    <div class="row1 section" id="section-5">
         1% teeth are rotten
     </div>
-    <div class="row1">
+    <div class="row1 section" id="section-6">
         99% Weird Al songs are weird
     </div>
 </div>

@@ -16,7 +16,7 @@ handler do |job|
           "sections": [
             {
               "id": 1,
-              "type": "number_and_text",
+              "type": "value_with_caption",
               "source": "thing_count",
               "data": {
                 "value": "2",
@@ -25,7 +25,7 @@ handler do |job|
             },
             {
               "id": 2,
-              "type": "number_and_text",
+              "type": "value_with_caption",
               "source": "widget_count",
               "data": {
                 "value": "2",
@@ -39,6 +39,7 @@ handler do |job|
 
   Juggernaut.publish('screens/1', test_rotation) if job == 'rotation'
 
+  # TODO: only publish if data has changed
   Juggernaut.publish('sources/thing_count', '
       {
         "value": "' + rand(100).to_s + '",
