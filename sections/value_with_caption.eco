@@ -1,6 +1,6 @@
-<div class="value">
+<span class="value">
   <%= @value %>
-</div>
-<div class="caption">
+</span>
+<span class="caption">
   <%= @caption %>
-</div>
+</span>

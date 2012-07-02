@@ -1,6 +1,7 @@
 
 html {
     height: 100%;
+    font-family: "Helvetica Neue"
 }
 body {
     width: 100%;
@@ -9,11 +10,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/*
+Useful for debugging but BUTT UGLY
 div {
     border: 1px solid black;
 }
-
+*/
 .container {
     display: -webkit-box;
     -webkit-box-sizing: border-box;
@@ -31,7 +33,7 @@ div {
     min-height: 100%;
 }
 .col1 {
-  -webkit-box-flex: 1.5 !important;
+  -webkit-box-flex: 2 !important;
 }
 .row1, .row2, .row3 {
     -webkit-box-sizing: border-box;
@@ -49,4 +51,24 @@ div {
 .next {
   left: 100%;
   top: 0;
+}
+.section {
+  padding: 20px;
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+.value {
+  font-weight: bold;
+}
+.caption {
+
+}
+.col2 {
+  background-color: #eee;
+}
+.subcolumn1 {
+  background-color: #f3f5f7;
+}
+.subcolumn2 {
+  background-color: #dedede;
 }
