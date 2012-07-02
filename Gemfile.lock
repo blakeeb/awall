@@ -1,0 +1,20 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    clockwork (0.4.0)
+      tzinfo
+    foreman (0.47.0)
+      thor (>= 0.13.6)
+    juggernaut (2.1.1)
+      redis
+    redis (3.0.1)
+    thor (0.15.4)
+    tzinfo (0.3.33)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  clockwork
+  foreman
+  juggernaut
