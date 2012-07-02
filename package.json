@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "juggernaut": "2.1.x",
-    "node-static": "0.6.x"
+    "node-static": "0.6.x",
+    "eco": "1.1.x"
   },
   "engines": {
     "node": "0.6.x"

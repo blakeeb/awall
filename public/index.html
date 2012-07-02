@@ -1,74 +1,20 @@
 <html>
   <head>
+    <title>Wallboard</title>
     <link href="css/awall.css" rel="stylesheet" type="text/css" />
-    <script src="js/ender.min.js"></script>
-    <script>
-      /*
-        Sections are individual components within a scene, rendered
-        into whichever div has "type" class name of id section-<%=id%>
-      */
-      var sections = [
-        {
-          id: 1,
-          type: 'number_and_text',
-          source: 'thing_count', /* TODO: Subscribe to thing_count pubsub channel */
-          data: {
-            value: 47,
-            caption: 'New Things'
-          }
-        },
-        {
-          id: 2,
-          type: 'number_and_text',
-          source: 'widget_count',
-          data: {
-            value: 5,
-            caption: 'Updated Widgets'
-          }
-        }
-      ];
-
-      /* Scenes are full-screen collections of sections, rendered into a layout */
-      var scene = {
-        layout: 'graph_with_boxes',
-        duration: 10,
-        immediate: false,
-        sections: sections
-      };
-      var scenes = [scene,scene,scene]
-
-      /* Rotation is a series of Scenes which... well... rotates. */
-      var rotation = scenes;
-      // Wall.changeRotation(rotation);
-    </script>
   </head>
-
   <body>
-    <div class="container visible">
-        <div class="col1">
-            <div class="row1">
-                INSANE Graph
-            </div>
-            <div class="row2">
-                <div class="subcolumn1">
-                    3 Doohickeys
-                </div>
-                <div class="subcolumn2">
-                    2 Gizmos
-                </div>
-            </div>
-        </div>
-        <div class="col2">
-            <div class="row1">
-                59% cats lie
-            </div>
-            <div class="row1">
-                1% teeth are rotten
-            </div>
-            <div class="row1">
-                99% Weird Al songs are weird
-            </div>
-        </div>
-    </div>
+    <div class="container"></div>
+    <script src="js/ender.min.js"></script>
+    <!-- TODO: figure out how to include eco and coffee-script in Ender without the "fs" error -->
+    <script src="js/coffee-script.js"></script>
+    <script src="js/eco.js"></script>
+    <script src="js/layouts/graph_with_boxes.js"></script>
+    <script>
+      // var wall = Wall.new();
+      $(document).ready(function() {
+        $('.container').html(ecoTemplates["graph_with_boxes"].call());
+      });
+    </script>
   </body>
 </html>

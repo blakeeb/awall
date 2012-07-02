@@ -1,0 +1,5 @@
+.rvmrc
+.idea
+node_modules
+public/js/layouts
+public/js/sections
