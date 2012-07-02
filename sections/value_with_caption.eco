@@ -1,0 +1,6 @@
+<div class="value">
+  <%= value %>
+</div>
+<div class="caption">
+  <%= caption %>
+</div>
