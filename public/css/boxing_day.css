@@ -1,0 +1,88 @@
+/* 
+  In-progress Box Sizing CSS Framework
+  See http://jsfiddle.net/blakeeb/nuuQT/
+*/
+
+html {
+    height: 100%;
+    font-family: "Helvetica Neue"
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-transition: .25s;
+}
+
+.container div { 
+    -webkit-box-align: stretch;
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+}
+
+.column {
+    -webkit-box-orient: vertical;
+}
+
+.row {
+    -webkit-box-orient: horizontal;
+}
+
+.next {
+  left: 100%;
+  top: 0;
+}
+
+.section {
+  padding: 20px;
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+.flex-1.column { -webkit-box-flex: 1 !important; }
+.flex-2.column { -webkit-box-flex: 2 !important; }
+.flex-3.column { -webkit-box-flex: 3 !important; }
+.flex-4.column { -webkit-box-flex: 4 !important; }
+.flex-5.column { -webkit-box-flex: 5 !important; }
+.fixed.column { -webkit-box-flex: 0 !important; }
+
+/*
+  Example:
+  
+  <div class="container">
+    <div class="flex-5 column">
+        <div class="row section">
+            INSANE Graph
+        </div>
+        <div class="row">
+            <div class="column section">
+                3 Doohickeys
+            </div>
+            <div class="fixed column section">
+                2 Gizmos
+            </div>
+        </div>
+    </div>
+    <div class="flex-1 column">
+        <div class="row section">
+            59% cats lie
+        </div>
+        <div class="row section">
+            1% teeth are rotten
+        </div>
+        <div class="row section">
+            99% Weird Al songs are weird
+        </div>
+    </div>
+  </div>
+*/
