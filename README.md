@@ -8,4 +8,5 @@ Some day I will grow up and be functional.
     foreman start
 
 
-
+See box sizing example:
+http://jsfiddle.net/blakeeb/nuuQT/
